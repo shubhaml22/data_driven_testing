@@ -7,7 +7,7 @@ import org.apache.poi.xssf.usermodel.*;
 
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -33,17 +33,17 @@ public class ExcelUtils {
         return rowcount;
     }
 
-    public static int getCellCount(String xlFile,String xlSheet,int rowNum) throws IOException {
-        fi=new FileInputStream(xlFile);
-        wb=new XSSFWorkbook(fi);
-        ws= wb.getSheet(xlSheet);
-        row=ws.getRow(rowNum);
-        int cellcount=row.getLastCellNum();
-        wb.close();
-        fi.close();
-        return cellcount;
-
-    }
+//    public static int getCellCount(String xlFile,String xlSheet,int rowNum) throws IOException {
+//        fi=new FileInputStream(xlFile);
+//        wb=new XSSFWorkbook(fi);
+//        ws= wb.getSheet(xlSheet);
+//        row=ws.getRow(rowNum);
+//        int cellcount=row.getLastCellNum();
+//        wb.close();
+//        fi.close();
+//        return cellcount;
+//
+//    }
     public static String getCellData(String xlFile,String xlSheet,int rowNum,int cellNum) throws IOException {
         fi=new FileInputStream(xlFile);
         wb=new XSSFWorkbook(fi);
@@ -66,23 +66,23 @@ public class ExcelUtils {
 
     }
 
-    public static void setCellData(String xlFile,String xlSheet,int rowNum,int cellNum,String data) throws IOException {
-
-        fi=new FileInputStream(xlFile);
-        wb=new XSSFWorkbook(fi);
-        ws=wb.getSheet(xlSheet);
-        row=ws.getRow(rowNum);
-        cell=row.createCell(cellNum);
-        cell.setCellValue(data);
-
-        fo=new FileOutputStream(xlFile);
-        wb.write(fo);
-
-        wb.close();
-        fi.close();
-        fo.close();
-
-    }
+//    public static void setCellData(String xlFile,String xlSheet,int rowNum,int cellNum,String data) throws IOException {
+//
+//        fi=new FileInputStream(xlFile);
+//        wb=new XSSFWorkbook(fi);
+//        ws=wb.getSheet(xlSheet);
+//        row=ws.getRow(rowNum);
+//        cell=row.createCell(cellNum);
+//        cell.setCellValue(data);
+//
+//        fo=new FileOutputStream(xlFile);
+//        wb.write(fo);
+//
+//        wb.close();
+//        fi.close();
+//        fo.close();
+//
+//    }
 
     public static void fillGreenColor(String xlFile,String xlSheet,int rowNum,int cellNum) throws IOException {
         fi=new FileInputStream(xlFile);

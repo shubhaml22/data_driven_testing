@@ -43,7 +43,7 @@ public class FD_calculator {
             pr_time.selectByVisibleText(pr2);
 
             Select fredwn=new Select(driver.findElement(By.xpath("//select[@id='frequency']")));
-            fredwn.selectByIndex(0);
+            fredwn.selectByVisibleText(fre);
 //            driver.findElement(By.xpath("//*[@id=\"fdMatVal\"]//div[2]//a[1]")).click();
             // Wait for overlay to disappear
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
